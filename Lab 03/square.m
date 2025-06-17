@@ -17,3 +17,5 @@ subplot(2,1,2)
 plot(t,c,'-red')
 legend('Square Cosine')
 title('Lab3/Aviskar Poudel/Square Cosine Wave')
+
+
