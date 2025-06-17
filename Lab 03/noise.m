@@ -1,11 +1,13 @@
 a = 5;
 f = 3;
 t = 0:0.01:1;
-y = a*sin(2*pi*f*t);
-s = a*cos(2*pi*f*t);
+s = a*sin(2*pi*f*t);
+c = a*cos(2*pi*f*t);
 x = rand(1, length(t));
-z1 = x + y;
-z2 = x + s;
+z1 = x + s;
+z2 = x + c;
+
+
 subplot(3,1,1)
 plot(t,x)
 legend('Noise')
