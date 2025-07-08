@@ -10,10 +10,10 @@ for i = 1:length(t)
 end
 
 % Compute even and odd parts
-xe = (f + fliplr(f)) / 2;
+xe = (x + fliplr(x)) / 2;
 
 
-xo  = (f - fliplr(f)) / 2;
+xo  = (x - fliplr(x)) / 2;
 
 % Plot original
 figure
