@@ -1,36 +1,49 @@
-am = 5;
-fm = 3;
-t = -1:0.001:1;
+amp = 5;
+fp = 4;          
+fc1 = 50;         
+fc2 = 100;        
+t = 0:0.001:1;
 
-msg = am*sign(sin(2*pi*fm*t));  
 
-subplot(3,1,1)
-plot(t, msg, '-red')
-hold on
-plot(t, zeros(size(t)), '-black')
-title('Lab4/Aviskar Poudel/Cos Msg Signal')
-legend('Cos Msg Signal')
+c1 = (amp/2) * sin(2*pi*fc1*t);
+c2 = (amp/2) * sin(2*pi*fc2*t);
 
-ac = 10;
-fc = 50;
+m = amp * sign(sin(2*pi*fp*t));  
 
-carrier = ac*cos(2*pi*fc*t);
+fsk_signal = zeros(size(t));
+for i = 1:length(t)
+    if m(i) > 0
+        fsk_signal(i) = (amp/2) * sin(2*pi*fc2*t(i));  
+    else
+        fsk_signal(i) = (amp/2) * sin(2*pi*fc1*t(i));  
+    end
+end
 
-subplot(3,1,2)
-plot(t, carrier, '-red')
-hold on
-plot(t, zeros(size(t)), '-black')
-title('Lab4/Aviskar Poudel/Carrier Signal')
-legend('Cos Carrier Signal')
 
-kf = 5; 
-beta = (kf*am)/fm;
+subplot(4,1,1);
+plot(t, c1, 'b');
+grid on;
+xlabel('Time');
+ylabel('Amplitude');
+title('Lab5/Aviskar Poudel/Carrier Signal 1 (Low Freq)');
 
-FM = ac*cos(2*pi*fc*t + beta*sin(2*pi*fm*t));
+subplot(4,1,2);
+plot(t, c2, 'r');
+grid on;
+xlabel('Time');
+ylabel('Amplitude');
+title('Lab5/Aviskar Poudel/Carrier Signal 2 (High Freq)');
 
-subplot(3,1,3)
-plot(t, FM, '-red')
-hold on
-plot(t, zeros(size(t)), '-black')
-title('Lab4/Aviskar Poudel/Freq Mod Signal')
-legend('Freq Mod Signal')
+subplot(4,1,3);
+plot(t, m, 'k');
+grid on;
+xlabel('Time');
+ylabel('Amplitude');
+title('Lab5/Aviskar Poudel/Message Signal (Digital Square Wave)');
+
+subplot(4,1,4);
+plot(t, fsk_signal, 'm');
+grid on;
+xlabel('Time');
+ylabel('Amplitude');
+title('Lab5/Aviskar Poudel/FSK Modulated Signal');
