@@ -7,7 +7,6 @@ plot(t,impulse)
 legend("Impulse")
 title('Lab3/Aviskar Poudel/Impulse - Continuous')
 
-
 subplot(2,1,2)
 stem(t,impulse, '-red')
 legend("Impulse")

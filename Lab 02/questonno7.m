@@ -17,5 +17,4 @@ hold on
 stem(t,yy,'-blue')
 hold on
 
-title('Lab1/Aviskar Poudel/Discrete Sine Wave')
-legend('Discrete Sine Wave')
+title('Lab1/Aviskar Poudel/All Signals Combined')

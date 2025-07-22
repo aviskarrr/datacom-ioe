@@ -26,8 +26,6 @@ legend('Line')
 subplot(3,1,3);
 stem(c,d,'-red')
 title('Linedraw3/Aviskar Poudel/013');
-
-
 legend('Discrete Line')
 
 grid on;
