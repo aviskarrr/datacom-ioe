@@ -15,7 +15,7 @@ plot(t, x);
 grid on;
 xlabel('time');
 ylabel('amplitude');
-title('Apil Maraseni/Carrier Signal');
+title('Aviskar Poudel/Carrier Signal');
 legend('carrier wave');
 
 % Message signal (bipolar square wave using sign function)
@@ -25,7 +25,7 @@ plot(t, y);
 grid on;
 xlabel('time');
 ylabel('amplitude');
-title('Apil Maraseni/Message Signal');
+title('Aviskar Poudel/Message Signal');
 legend('message signal');
 
 % PSK Modulation (invert carrier phase based on message bit)
@@ -35,5 +35,5 @@ plot(t, a);
 grid on;
 xlabel('time');
 ylabel('amplitude');
-title('Apil Maraseni/PSK Signal');
+title('Aviskar Poudel/PSK Signal');
 legend('PSK signal');
